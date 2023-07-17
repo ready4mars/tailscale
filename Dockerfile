@@ -7,7 +7,7 @@ ENV TAILSCALE_VERSION=$TAILSCALE_VERSION
 RUN apt-get update
 RUN apt-get install --upgrade -y --no-install-recommends apt-transport-https \
     ca-certificates \
-    netcat \
+    netcat-openbsd \
     wget \
     dnsutils
 RUN apt-get clean
