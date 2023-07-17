@@ -4,15 +4,14 @@ WORKDIR /render
 ARG TAILSCALE_VERSION
 ENV TAILSCALE_VERSION=$TAILSCALE_VERSION
 
-RUN apt-get -qq update \
-  && apt-get -qq install --upgrade -y --no-install-recommends \
+RUN apt-get update \
+  && apt-get install --upgrade -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \
     netcat \
     wget \
     dnsutils \
-  > /dev/null \
-  && apt-get -qq clean \
+  && apt-get clean \
   && rm -rf \
     /var/lib/apt/lists/* \
     /tmp/* \
